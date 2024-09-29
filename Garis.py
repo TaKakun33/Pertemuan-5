@@ -42,16 +42,15 @@ def Make_Garis(P1,P2):
 # Definisi Dan Spesifikasi Selector
 # Point1: Garis --> Point
 #   {Point1(G) memberikan Point-1 dari Garis G}
+# 
+# Point2: Garis --> Point
+#   {Point2(G) memberikan Point-2 dari Garis G}
 # Realisasi
 def Point1(G):
     return G[0]
 
-# Point2: Garis --> Point
-#   {Point2(G) memberikan Point-2 dari Garis G}
-# Realisasi
 def Point2(G):
     return G[1]
-
 
 
 # Definisi dan Spesifikasi Predikat
