@@ -74,4 +74,5 @@ def panjang_garis(G):
 # Aplikasi 
 print(IsSejajar(Make_Garis(Make_point(0,0), Make_point(2,3)), Make_Garis(Make_point(-2,5), Make_point(0,-2))))
 print(IsSejajar(Make_Garis(Make_point(0,0), Make_point(2,3)), Make_Garis(Make_point(0,0), Make_point(-2,-3))))
+
 print(panjang_garis(Make_Garis(Make_point(2,2), Make_point(5,2))))
