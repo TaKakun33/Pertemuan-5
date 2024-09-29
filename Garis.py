@@ -51,14 +51,6 @@ def Point1(G):
 def Point2(G):
     return G[1]
 
-
-# Definisi dan Spesifikasi Predikat
-# Issejajar: Garis --> Boolean
-#   {IsSejajar(G1,G2) benar jika G1 sama dengan G2}
-# Realisasi
-def IsSejajar(G1,G2):
-    return G1 == G2
-
 # Definisi dan Spesifikasi Operator/Fungsi Lain terhadap garis
 # Issejajar: Garis --> real
 #   {panjang_garis(G) menghitung panjang garis dari point-1 ke point-2}
@@ -67,6 +59,14 @@ def panjang_garis(G):
     panjang_x = absis(Point2(G)) - absis(Point1(G))
     panjang_y = oordinat(Point2(G)) - oordinat(Point1(G))
     return ((panjang_x ** 2) + (panjang_y ** 2))**0.5
+
+
+# Definisi dan Spesifikasi Predikat
+# Issejajar: Garis --> Boolean
+#   {IsSejajar(G1,G2) benar jika G1 sama dengan G2}
+# Realisasi
+def IsSejajar(G1,G2):
+    return G1 == G2
 
 
 # Aplikasi 
