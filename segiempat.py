@@ -87,6 +87,14 @@ def alas(S):
 def tinggi(S):
     return S[1]
 
+# Definisi dan Spesifikasi operator terhadap segiempat
+# AreaBujurSangkar: segiempat --> real
+#   {AreaBujurSangkar(S) menghitung luas area dari bujur sangkar}
+
+# Realisasi
+def AreaBujurSangkar(S):
+    return panjang_garis(alas(S)) * panjang_garis(tinggi(S))
+
 # Definisi dan Spesifikasi Predikat
 # isBujurSangkar: Segiempat --> Boolean
 #   {isBujurSangkar(S) meencari tau apakah segiempat tersebut merupakan Bujur sangkar dengan mencari tau panjang dari alas dan tinggi segiempat tersebut}
@@ -100,14 +108,6 @@ def isBujurSangkar(S):
 
 def isJarjargenjang(S):
     return panjang_garis(alas(S)) != panjang_garis(tinggi(S))
-
-# Definisi dan Spesifikasi operator terhadap segiempat
-# AreaBujurSangkar: segiempat --> real
-#   {AreaBujurSangkar(S) menghitung luas area dari bujur sangkar}
-
-# Realisasi
-def AreaBujurSangkar(S):
-    return panjang_garis(alas(S)) * panjang_garis(tinggi(S))
 
 
 # Aplikasi 
