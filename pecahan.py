@@ -1,5 +1,5 @@
-# Nama File   = Garis.py
-# Deskripsi   = Membuat tipe bentukan garis berseta konstruktor dan selekror sama menentukan panjang garis dan apakah garissejajar 
+# Nama File   = Pecahan.py
+# Deskripsi   = Membuat tipe bentukan pecahan berseta konstruktor dan selekror  
 # Nama        = akmal kafli anan
 # Tanggal     = 28 September 2024
 
