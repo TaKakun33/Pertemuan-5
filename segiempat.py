@@ -76,16 +76,16 @@ def Make_Segiempat(G1,G2):
 
 # Definisi Dan Spesifikasi Selector
 # GARIS1: Segiempat --> Garis
-#   {Garis1(G) memberikan Garis-1 dari Segiempat G}
+#   {Garis1(S) memberikan Garis-1 dari Segiempat S}
 # 
 # Garis2: Segiempat --> Garis
-#   {Garis2(G) memberikan Garis-2 dari Segiempat G}
+#   {Garis2(S) memberikan Garis-2 dari Segiempat S}
 # Realisasi
 def alas(S):
     return S[0]
 
-def tinggi(s):
-    return s[1]
+def tinggi(S):
+    return S[1]
 
 # Definisi dan Spesifikasi Predikat
 # isBujurSangkar: Segiempat --> Boolean
