@@ -17,13 +17,12 @@ def Make_point(X,Y):
 # Definisi Dan Spesifikasi Selector
 # absis: point --> integer
 #   {absis(P) memberikan absis dari point P}
+# oordinat: point --> integer
+#   {oordinat(P) memberikan oordinat dari point P}
 # Realisasi
 def absis(P):
     return P[0]
 
-# oordinat: point --> integer
-#   {oordinat(P) memberikan oordinat dari point P}
-# Realisasi
 def oordinat(P):
     return P[1]
 
