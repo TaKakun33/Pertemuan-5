@@ -1,8 +1,9 @@
 # Nama File   = Garis.py
-# Deskripsi   = Membuat tipe bentukan garis berseta konstruktor dan selekror sama menentukan panjang garis dan apakah garissejajar 
+# Deskripsi   = Membuat tipe bentukan garis berseta konstruktor dan selekror sama menentukan panjang garis dan apakah garis ssejajar 
 # Nama        = akmal kafli anan
 # Tanggal     = 28 September 2024
 
+# =================================================================================================================================================================
 # Definisi type
 # type Point: <x:integer, y:integer>
 #   {<x,y> adalah sebuah point dengan x adalah absis dan y adalah oordinat}
@@ -26,7 +27,7 @@ def absis(P):
 def oordinat(P):
     return P[1]
 
-
+# =================================================================================================================================================================
 # Definisi type
 # type Garis: <P1:point, P2:point>
 #   {<P1,P2> adalah sebuah garis dengan P1 adalah Point1 dan P2 adalah Point2}
