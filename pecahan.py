@@ -11,7 +11,6 @@
 # MakeP: 2real --> pecahan
 #   {makeP (n,d) membentuk point dari n dan d dengan n sebagai pembilang dan d sebagai penyebut}
 # Realisasi
-
 def makeP (n,d):
     return[n,d]
 
@@ -21,7 +20,6 @@ def makeP (n,d):
 # 
 # peny: pecahan --> integer
 #   {peny(d) memberikan penyebut d dari pecahan tersebut}
-
 # Realisasi
 def pemb(P):
     return P[0]
