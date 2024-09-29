@@ -59,7 +59,7 @@ def DivP(P1,P2):
 def RealP(P):
     return pemb(P) / peny(P)
 
-# Definisi dan Spesifikasi operator terhadap pecahan
+# Definisi dan Spesifikasi predikat
 # isEqP: 2 pecahan --> boolean
 #   {isEqP(P1,P2) membandingkan apakah ke-2 buah pecahan itu sama}
 # 
