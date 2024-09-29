@@ -50,7 +50,7 @@ def Year(D):
 #   {Yesteday(D) menghitung hari kemarin dari Date D}
 # 
 # HariKe1900: Date --> integer[1..366]
-#   {HariKe1900(D) menghitung jumlah hari pada tanggal tsb dari 1 januari}
+#   {HariKe1900(D) menghitung jumlah hari pada tanggal tsb dari 1 januari dengan memperhitungkan tahub kabisat}
 # Realisasi
 def NextDay(D):
     # bulan yang terdiri dari 30 hari kecuali desember
