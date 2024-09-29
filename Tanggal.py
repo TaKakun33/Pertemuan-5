@@ -91,7 +91,7 @@ def Yesteday(D):
                 return MakeDate(29, 2, Year(D))
             else:
                 return MakeDate(28, 2, Year(D))
-        elif Month(D) == 2 or Month(D) == 6 or Month(D) == 8 or Month(D) == 9 or Month(D) == 11:
+        elif Month(D) == 2 or Month(D) == 4 or Month(D) == 6 or Month(D) == 8 or Month(D) == 9 or Month(D) == 11:
             return MakeDate(31, Month(D) + 1, Year(D))
         elif Month(D) == 1:
             return MakeDate(31,12,Year(D) - 1)
