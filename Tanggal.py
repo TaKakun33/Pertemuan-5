@@ -18,7 +18,7 @@
 
 # Definisi Dan Spesifikasi Konstruktor
 # MakeDate: Hr,Bln,Thn --> Date
-#   {makeDate (d,m,y) membentuk point dari n dan d dengan n sebagai pembilang dan d sebagai penyebut}
+#   {makeDate (d,m,y) membentuk Date darihr,Bln,Thn yang saling bersangkutan}
 # Realisasi
 def MakeDate(d,m,y):
     return [d,m,y]
