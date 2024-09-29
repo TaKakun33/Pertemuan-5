@@ -28,64 +28,57 @@ def absis(P):
 def ordinat(P):
     return P[1]
 
-# =================================================================================================================================================================
-# Definisi type
-# type Garis: <P1:point, P2:point>
-#   {<P1,P2> adalah sebuah garis dengan P1 adalah Point1 dan P2 adalah Point2}
-
-# Definisi Dan Spesifikasi Konstruktor
-# Make-Garis: 2point --> Garis
-#   {Make_Garis(X,Y) membentuk Garis dari P1 dan P2 dengan P1 sebagai point-1 dan P2 sebagai point-2}
-# Realisasi
-def Make_Garis(P1,P2):
-    return [P1,P2]
-
-# Definisi Dan Spesifikasi Selector
-# absis: Garis --> Point
-#   {Point1(G) memberikan Point-1 dari Garis G}
-# 
-# absis: Garis --> Point
-#   {Point2(G) memberikan Point-2 dari Garis G}
-# Realisasi
-def Point1(G):
-    return G[0]
-
-def Point2(G):
-    return G[1]
-
-# Definisi dan Spesifikasi Operator/Fungsi Lain terhadap garis
-# Issejajar: Garis --> real
-#   {panjang_garis(G) menghitung panjang garis dari point-1 ke point-2}
-# Realisasi
-def panjang_garis(G):
-    panjang_x = absis(Point2(G)) - absis(Point1(G))
-    panjang_y = ordinat(Point2(G)) - ordinat(Point1(G))
-    return ((panjang_x ** 2) + (panjang_y ** 2))**0.5
 
 # =================================================================================================================================================================
 # Definisi type
-# type Segiempat: <G1:Garis, G2:Garis>
-#   {<G1,G2> adalah sebuah Segiempat dengan 4 garis yaitu 2 garis alas dan 2 garis tinggi}
+# type Segiempat: <P1:Point, P2:Point, P3:Point, P4:Point>
+#   {<P1,P2,P3,P4> adalah sebuah Segiempat dengan 4 Point}
 
 # Definisi Dan Spesifikasi Konstruktor
-# Make-Segiempat: 2Garis --> Segiempat
-#   {Make_Segiempat(G1,G2) membentuk Segiempat dari 2 buah garis yang mana G1 meupakan alas dari segi empat dan G2 merupakan tinggi dari segi empat}
+# Make-Segiempat: 4Point --> Segiempat
+#   {Make_Segiempat(P1,P2,P3,P4) membentuk Segiempat dari 4 buah point}
 # Realisasi
-def Make_Segiempat(G1,G2):
-    return [G1,G2]
+def Make_Segiempat(P1,P2,P3,P4):
+    return [P1,P2,P3,P4]
 
 # Definisi Dan Spesifikasi Selector
-# GARIS1: Segiempat --> Garis
-#   {Garis1(S) memberikan Garis-1 dari Segiempat S}
+# Point1: Segiempat --> Point
+#   {Point1(S) memberikan Point-1 dari Segiempat S}
 # 
-# Garis2: Segiempat --> Garis
-#   {Garis2(S) memberikan Garis-2 dari Segiempat S}
+# Point2: Segiempat --> Point
+#   {Point2(S) memberikan Point-2 dari Segiempat S}
+# 
+# Point3: Segiempat --> Point
+#   {Point3(S) memberikan Point-3 dari Segiempat S}
+# 
+# Point4: Segiempat --> Point
+#   {Point4(S) memberikan Point-4 dari Segiempat S}
 # Realisasi
-def alas(S):
+def Point1(S):
     return S[0]
 
-def tinggi(S):
+def Point2(S):
     return S[1]
+
+def Point3(S):
+    return S[2]
+
+def Point4(S):
+    return S[3]
+
+# Definisi dan Spesifikasi operator terhadap Point
+# Jarak: 2point --> real
+#   {Jarak(P1,P2) menghitung jarak dari kedua point}
+# 
+# Gradien: 2point --> real
+#   {Gradien(P1,P2) menghitung Gradien dari kedua point}
+
+# Realisasi
+def Jarak(P1,P2):
+    return (((absis(P1) - absis(P2))** 2) + ((ordinat(P1) - ordinat(P2))** 2))**0.5
+
+def Gradien(P1,P2):
+    return (ordinat(P2) - ordinat(P1)) / (absis(P2) - absis(P1))
 
 # Definisi dan Spesifikasi operator terhadap segiempat
 # AreaBujurSangkar: segiempat --> real
@@ -93,25 +86,30 @@ def tinggi(S):
 
 # Realisasi
 def AreaBujurSangkar(S):
-    return panjang_garis(alas(S)) * panjang_garis(tinggi(S))
+    return Jarak(Point1(S), Point2(S)) * Jarak(Point3(S), Point4(S))
 
 # Definisi dan Spesifikasi Predikat
 # isBujurSangkar: Segiempat --> Boolean
-#   {isBujurSangkar(S) meencari tau apakah segiempat tersebut merupakan Bujur sangkar dengan mencari tau panjang dari alas dan tinggi segiempat tersebut}
+#   {isBujurSangkar(S) meencari tau apakah segiempat tersebut merupakan Bujur sangkar}
 # 
 # isJarjargenjang: Segiempat --> Boolean
-#   {isJarjargenjang(S) meencari tau apakah segiempat tersebut merupakan jajar genjang dengan mencari tau panjang dari alas dan tinggi segiempat tersebut}
+#   {isJarjargenjang(S) meencari tau apakah segiempat tersebut merupakan jajar genjang}
 
 # Realisasi
+
 def isBujurSangkar(S):
-    return panjang_garis(alas(S)) == panjang_garis(tinggi(S))
+    return Jarak(Point1(S), Point2(S)) * Jarak(Point3(S), Point4(S)) == Jarak(Point1(S), Point3(S)) * Jarak(Point2(S), Point4(S))
 
 def isJarjargenjang(S):
-    return panjang_garis(alas(S)) != panjang_garis(tinggi(S))
+    P1 = Point1(S)
+    P2 = Point2(S)
+    P3 = Point3(S)
+    P4 = Point4(S)
+    return Gradien(P1, P2) == Gradien(P3, P4) and Gradien(P1, P4) == Gradien(P2, P3) and Jarak(P1, P2) == Jarak(P3, P4) and Jarak(P1, P4) == Jarak(P2, P3)
 
 
 # Aplikasi 
-print(AreaBujurSangkar(Make_Segiempat(Make_Garis(Make_point(1,2),Make_point(4,5)), Make_Garis(Make_point(1,2),Make_point(4,5)))))
+print(AreaBujurSangkar(Make_Segiempat( Make_point(1, 3), Make_point(2, 3), Make_point(1, 2), Make_point(2, 2))))
 
-print(isBujurSangkar(Make_Segiempat(Make_Garis(Make_point(1,2),Make_point(4,5)), Make_Garis(Make_point(1,2),Make_point(4,5)))))
-print(isJarjargenjang(Make_Segiempat(Make_Garis(Make_point(1,2),Make_point(4,5)), Make_Garis(Make_point(1,2),Make_point(4,5)))))
+print(isBujurSangkar(Make_Segiempat(Make_point(1, 3), Make_point(2, 3), Make_point(1, 2), Make_point(2, 2))))
+print(isJarjargenjang(Make_Segiempat(Make_point(1, 1), Make_point(4, 1), Make_point(6, 4), Make_point(3, 4))))
