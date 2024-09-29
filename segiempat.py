@@ -1,8 +1,9 @@
-# Nama File   = Garis.py
-# Deskripsi   = Membuat tipe bentukan garis berseta konstruktor dan selekror sama menentukan panjang garis dan apakah garissejajar 
+# Nama File   = Segiempat.py
+# Deskripsi   = Membuat tipe bentukan segiempat berseta konstruktor dan selekror  
 # Nama        = akmal kafli anan
 # Tanggal     = 28 September 2024
 
+# =================================================================================================================================================================
 # Definisi type
 # type Point: <x:integer, y:integer>
 #   {<x,y> adalah sebuah point dengan x adalah absis dan y adalah oordinat}
@@ -27,7 +28,7 @@ def absis(P):
 def oordinat(P):
     return P[1]
 
-
+# =================================================================================================================================================================
 # Definisi type
 # type Garis: <P1:point, P2:point>
 #   {<P1,P2> adalah sebuah garis dengan P1 adalah Point1 dan P2 adalah Point2}
@@ -61,7 +62,7 @@ def panjang_garis(G):
     panjang_y = oordinat(Point2(G)) - oordinat(Point1(G))
     return ((panjang_x ** 2) + (panjang_y ** 2))**0.5
 
-
+# =================================================================================================================================================================
 # Definisi type
 # type Segiempat: <G1:Garis, G2:Garis, G3:Garis, G4:Garis>
 #   {<G1,G2,G3,G4> adalah sebuah Segiempat dengan 4 garis}
@@ -96,17 +97,20 @@ def AreaBujurSangkar(S):
 
 # Definisi dan Spesifikasi Predikat
 # isBujurSangkar: Segiempat --> Boolean
-#   {panjang_garis(G) menghitung panjang garis dari point-1 ke point-2}
+#   {isBujurSangkar(S) meencari tau apakah segiempat tersebut merupakan Bujur sangkar dengan mencari tau panjang dari alas dan tinggi segiempat tersebut}
+# 
+# isJarjargenjang: Segiempat --> Boolean
+#   {isJarjargenjang(S) meencari tau apakah segiempat tersebut merupakan jajar genjang dengan mencari tau panjang dari alas dan tinggi segiempat tersebut}
 
 # Realisasi
-def isBujueSangkar(S):
+def isBujurSangkar(S):
     return panjang_garis(alas(S)) == panjang_garis(tinggi(S))
 
 def isJarjargenjang(S):
     return panjang_garis(alas(S)) != panjang_garis(tinggi(S))
 
 # Aplikasi 
-print(AreaBujurSangkar(Make_Segiempat(Make_Garis(Make_point(1,2), Make_point(4,5)), Make_Garis(Make_point(1,2), Make_point(4,5)))))
+print(AreaBujurSangkar(Make_Segiempat(Make_Garis(Make_point(1,2),Make_point(4,5)), Make_Garis(Make_point(1,2),Make_point(4,5)))))
 
-print(isBujueSangkar(Make_Segiempat(Make_Garis(Make_point(1,2), Make_point(4,5)), Make_Garis(Make_point(1,2), Make_point(4,5)))))
-print(isJarjargenjang(Make_Segiempat(Make_Garis(Make_point(1,2), Make_point(4,5)), Make_Garis(Make_point(1,2), Make_point(4,5)))))
+print(isBujurSangkar(Make_Segiempat(Make_Garis(Make_point(1,2),Make_point(4,5)), Make_Garis(Make_point(1,2),Make_point(4,5)))))
+print(isJarjargenjang(Make_Segiempat(Make_Garis(Make_point(1,2),Make_point(4,5)), Make_Garis(Make_point(1,2),Make_point(4,5)))))
