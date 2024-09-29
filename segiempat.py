@@ -18,13 +18,13 @@ def Make_point(X,Y):
 # Definisi Dan Spesifikasi Selector
 # absis: point --> integer
 #   {absis(P) memberikan absis dari point P}
+# 
+# ordinat: point --> integer
+#   {ordinat(P) memberikan ordinat dari point P}
 # Realisasi
 def absis(P):
     return P[0]
 
-# ordinat: point --> integer
-#   {ordinat(P) memberikan ordinat dari point P}
-# Realisasi
 def ordinat(P):
     return P[1]
 
@@ -43,13 +43,13 @@ def Make_Garis(P1,P2):
 # Definisi Dan Spesifikasi Selector
 # absis: Garis --> Point
 #   {Point1(G) memberikan Point-1 dari Garis G}
+# 
+# absis: Garis --> Point
+#   {Point2(G) memberikan Point-2 dari Garis G}
 # Realisasi
 def Point1(G):
     return G[0]
 
-# absis: Garis --> Point
-#   {Point2(G) memberikan Point-2 dari Garis G}
-# Realisasi
 def Point2(G):
     return G[1]
 
@@ -77,13 +77,13 @@ def Make_Segiempat(G1,G2):
 # Definisi Dan Spesifikasi Selector
 # GARIS1: Segiempat --> Garis
 #   {Garis1(G) memberikan Garis-1 dari Segiempat G}
+# 
+# Garis2: Segiempat --> Garis
+#   {Garis2(G) memberikan Garis-2 dari Segiempat G}
 # Realisasi
 def alas(S):
     return S[0]
 
-# Garis2: Segiempat --> Garis
-#   {Garis2(G) memberikan Garis-2 dari Segiempat G}
-# Realisasi
 def tinggi(s):
     return s[1]
 
