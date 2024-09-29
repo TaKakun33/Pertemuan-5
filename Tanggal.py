@@ -42,7 +42,7 @@ def Month(D):
 def Year(D):
     return D[2]
 
-# Definisi dan Spesifikasi operator terhadap pecahan
+# Definisi dan Spesifikasi operator terhadap date
 # NextDay: 2 Date --> Date
 #   {NextDay(D) menghitung keesokan hari dari Date D}
 # 
