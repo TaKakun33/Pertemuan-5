@@ -5,7 +5,7 @@
 
 # =================================================================================================================================================================
 # Definisi type
-# type Point: <x:integer, y:integer>
+# type Point: <x:real, y:real>
 #   {<x,y> adalah sebuah point dengan x adalah absis dan y adalah ordinat}
 
 # Definisi Dan Spesifikasi Konstruktor
@@ -16,10 +16,10 @@ def Make_point(X,Y):
     return [X,Y]
 
 # Definisi Dan Spesifikasi Selector
-# absis: point --> integer
+# absis: point --> real
 #   {absis(P) memberikan absis dari point P}
 # 
-# ordinat: point --> integer
+# ordinat: point --> real
 #   {ordinat(P) memberikan ordinat dari point P}
 # Realisasi
 def absis(P):
