@@ -6,11 +6,11 @@
 # =================================================================================================================================================================
 # Definisi type
 # type Point: <x:integer, y:integer>
-#   {<x,y> adalah sebuah point dengan x adalah absis dan y adalah oordinat}
+#   {<x,y> adalah sebuah point dengan x adalah absis dan y adalah ordinat}
 
 # Definisi Dan Spesifikasi Konstruktor
 # Make-point: 2real --> point
-#   {Make_point(X,Y) membentuk point dari x dan y dengan x sebagai absis dan y sebagai oordinat}
+#   {Make_point(X,Y) membentuk point dari x dan y dengan x sebagai absis dan y sebagai ordinat}
 # Realisasi
 def Make_point(X,Y):
     return [X,Y]
@@ -22,10 +22,10 @@ def Make_point(X,Y):
 def absis(P):
     return P[0]
 
-# oordinat: point --> integer
-#   {oordinat(P) memberikan oordinat dari point P}
+# ordinat: point --> integer
+#   {ordinat(P) memberikan ordinat dari point P}
 # Realisasi
-def oordinat(P):
+def ordinat(P):
     return P[1]
 
 # =================================================================================================================================================================
@@ -59,7 +59,7 @@ def Point2(G):
 # Realisasi
 def panjang_garis(G):
     panjang_x = absis(Point2(G)) - absis(Point1(G))
-    panjang_y = oordinat(Point2(G)) - oordinat(Point1(G))
+    panjang_y = ordinat(Point2(G)) - ordinat(Point1(G))
     return ((panjang_x ** 2) + (panjang_y ** 2))**0.5
 
 # =================================================================================================================================================================
