@@ -67,10 +67,12 @@ def panjang_garis(G):
 #   {IsSejajar(G1,G2) benar jika G1 sama dengan G2}
 # Realisasi
 def IsSejajar(G1,G2):
-    return G1 == G2
+    m1 = (ordinat(Point2(G1)) - ordinat(Point1(G1))) / (absis(Point2(G1)) - absis(Point1(G1)))
+    m2 = (ordinat(Point2(G2)) - ordinat(Point1(G2))) / (absis(Point2(G2)) - absis(Point1(G2)))
+    return m1 == m2
 
 
 # Aplikasi 
-print(IsSejajar(Make_Garis(Make_point(1,2), Make_point(1,2)), Make_Garis(Make_point(1,2), Make_point(1,2))))
-print(IsSejajar(Make_Garis(Make_point(1,2), Make_point(1,2)), Make_Garis(Make_point(1,3), Make_point(1,5))))
+print(IsSejajar(Make_Garis(Make_point(0,0), Make_point(2,3)), Make_Garis(Make_point(-2,5), Make_point(0,-2))))
+print(IsSejajar(Make_Garis(Make_point(0,0), Make_point(2,3)), Make_Garis(Make_point(0,0), Make_point(-2,-3))))
 print(panjang_garis(Make_Garis(Make_point(2,2), Make_point(5,2))))
