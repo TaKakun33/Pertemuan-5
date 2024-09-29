@@ -88,8 +88,8 @@ def tinggi(s):
     return s[1]
 
 # Definisi dan Spesifikasi operator terhadap segiempat
-# NextDay: 2 Date --> Date
-#   {NextDay(D) menghitung keesokan hari dari Date D}
+# AreaBujurSangkar: segiempat --> real
+#   {AreaBujurSangkar(S) menghitung luas area dari bujur sangkar}
 
 # Realisasi
 def AreaBujurSangkar(S):
