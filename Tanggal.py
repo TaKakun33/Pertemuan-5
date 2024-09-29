@@ -113,7 +113,7 @@ def Yesteday(D):
 
 # Realisasi
 def isEqD(D1,D2):
-    return D1 == D2
+    return Day(D1) == Day(D2) and Month(D1) == Month(D2) and Year(D1) == Year(D1)
 
 def IsBeafore(D1,D2):
     if Year(D1) != Year(D2):
