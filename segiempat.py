@@ -64,8 +64,8 @@ def panjang_garis(G):
 
 # =================================================================================================================================================================
 # Definisi type
-# type Segiempat: <G1:Garis, G2:Garis, G3:Garis, G4:Garis>
-#   {<G1,G2,G3,G4> adalah sebuah Segiempat dengan 4 garis}
+# type Segiempat: <G1:Garis, G2:Garis>
+#   {<G1,G2> adalah sebuah Segiempat dengan 4 garis yaitu 2 garis alas dan 2 garis tinggi}
 
 # Definisi Dan Spesifikasi Konstruktor
 # Make-Segiempat: 2Garis --> Segiempat
