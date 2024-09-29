@@ -114,7 +114,8 @@ def isJarjargenjang(S):
     P_Garis_2 = panjang_garis(Garis2(S))
     P_Garis_3 = panjang_garis(Garis3(S))
     P_Garis_4 = panjang_garis(Garis4(S))
-    return P_Garis_1 == P_Garis_2 or P_Garis_1 == P_Garis_3 or P_Garis_1 == P_Garis_3 or P_Garis_2 == P_Garis_3 or P_Garis_2 == P_Garis_4
+    return P_Garis_1 == P_Garis_2 or P_Garis_1 == P_Garis_3 or P_Garis_1 == P_Garis_3 or P_Garis_2 == P_Garis_3 or P_Garis_2 == P_Garis_4 or  P_Garis_3 == P_Garis_4
 
 # Aplikasi 
 print(isBujueSangkar(Make_Segiempat(Make_Garis(Make_point(2,2), Make_point(5,2)),Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)))))
+print(isJarjargenjang(Make_Segiempat(Make_Garis(Make_point(2,2), Make_point(5,2)),Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)))))
