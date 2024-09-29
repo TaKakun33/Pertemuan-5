@@ -100,31 +100,6 @@ def Yesteday(D):
     else:
         return MakeDate(Day(D) - 1, Month(D), Year(D))
 
-def dpm(bulan: int) -> int:
-    if bulan == 1:
-        return 1
-    elif bulan == 2:
-        return 32
-    elif bulan == 3:
-        return 60
-    elif bulan == 4:
-        return 91
-    elif bulan == 5:
-        return 121
-    elif bulan == 6:
-        return 152
-    elif bulan == 7:
-        return 182
-    elif bulan == 8:
-        return 213
-    elif bulan == 9:
-        return 244
-    elif bulan == 10:
-        return 274
-    elif bulan == 11:
-        return 305
-    elif bulan == 12:
-        return 335
     
 def HariKe1900(D):
     if Month(D) == 1:
