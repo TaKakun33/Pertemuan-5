@@ -48,7 +48,9 @@ def Year(D):
 # 
 # Yesteday: 2 Date --> Date
 #   {Yesteday(D) menghitung hari kemarin dari Date D}
-
+# 
+# HariKe1900: Date --> integer[1..366]
+#   {HariKe1900(D) menghitung jumlah hari pada tanggal tsb dari 1 januari}
 # Realisasi
 def NextDay(D):
     # bulan yang terdiri dari 30 hari kecuali desember
@@ -97,6 +99,60 @@ def Yesteday(D):
             return MakeDate(31,12,Year(D) - 1)
     else:
         return MakeDate(Day(D) - 1, Month(D), Year(D))
+
+def dpm(bulan: int) -> int:
+    if bulan == 1:
+        return 1
+    elif bulan == 2:
+        return 32
+    elif bulan == 3:
+        return 60
+    elif bulan == 4:
+        return 91
+    elif bulan == 5:
+        return 121
+    elif bulan == 6:
+        return 152
+    elif bulan == 7:
+        return 182
+    elif bulan == 8:
+        return 213
+    elif bulan == 9:
+        return 244
+    elif bulan == 10:
+        return 274
+    elif bulan == 11:
+        return 305
+    elif bulan == 12:
+        return 335
+    
+def HariKe1900(D):
+    if Month(D) == 1:
+        hari = 1
+    elif Month(D) == 2:
+        hari = 32
+    elif Month(D) == 3:
+        hari = 60
+    elif Month(D) == 4:
+        hari = 91
+    elif Month(D) == 5:
+        hari = 121
+    elif Month(D) == 6:
+        hari = 152
+    elif Month(D) == 7:
+        hari = 182
+    elif Month(D) == 8:
+        hari = 213
+    elif Month(D) == 9:
+        hari = 244
+    elif Month(D) == 10:
+        hari = 274
+    elif Month(D) == 11:
+        hari = 305
+    elif Month(D) == 12:
+        hari = 335
+    
+    return hari + Day(D) - 1 + (1 if Month(D) > 2 and IsKabisat(Year(D)) else 0)
     
 # Definisi dan Spesifikasi Predikat
 # isEqD: Date --> Boolean
@@ -140,6 +196,7 @@ def IsKabisat(T):
 # Aplikasi
 print(NextDay(MakeDate(30,3,2006)))
 print(Yesteday(MakeDate(1,3,2006)))
+print(HariKe1900(MakeDate(11,2,1000)))
 
 print(isEqD(MakeDate(24,10,2003),MakeDate(24,10,2003)))
 print(IsBeafore(MakeDate(24,10,2003),MakeDate(24,10,2003)))
