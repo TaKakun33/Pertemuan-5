@@ -43,6 +43,9 @@ def kode_matkul(MHS):
 def Nilai(MHS):
     return MHS[2]
 
+# Definisi dan Spesifikasi operator terhadap MHS2
+# hitungRangeNilai: 2 MHS2 --> kode_matkul, nilai
+#   {hitungRangeNilai(M1,M2) menmbahkan 2 buah MHS2 yaitu P1 dan P2}
 def hitungRangeNilai(M1,M2):
     nilai_max = ((Nilai(M1) + Nilai(M2)) + abs(Nilai(M1) - Nilai(M2)))/2
     nilai_min = ((Nilai(M1) + Nilai(M2)) - abs(Nilai(M1) - Nilai(M2)))/2
