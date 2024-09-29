@@ -67,55 +67,46 @@ def panjang_garis(G):
 #   {<G1,G2,G3,G4> adalah sebuah Segiempat dengan 4 garis}
 
 # Definisi Dan Spesifikasi Konstruktor
-# Make-Segiempat: 4Garis --> Segiempat
-#   {Make_Segiempat(G1,G2,G3,G4) membentuk Segiempat dari 4 buah garis yaitu G1, G2, G3, G4}
+# Make-Segiempat: 2Garis --> Segiempat
+#   {Make_Segiempat(G1,G2) membentuk Segiempat dari 2 buah garis yang mana G1 meupakan alas dari segi empat dan G2 merupakan tinggi dari segi empat}
 # Realisasi
-def Make_Segiempat(G1,G2,G3,G4):
-    return [G1,G2,G3,G4]
+def Make_Segiempat(G1,G2):
+    return [G1,G2]
 
 # Definisi Dan Spesifikasi Selector
 # GARIS1: Segiempat --> Garis
 #   {Garis1(G) memberikan Garis-1 dari Segiempat G}
 # Realisasi
-def Garis1(G):
-    return G[0]
+def alas(S):
+    return S[0]
 
 # Garis2: Segiempat --> Garis
 #   {Garis2(G) memberikan Garis-2 dari Segiempat G}
 # Realisasi
-def Garis2(G):
-    return G[1]
+def tinggi(s):
+    return s[1]
 
-# GARIS3: Segiempat --> Garis
-#   {Garis3(G) memberikan Garis-1 dari Segiempat G}
-# Realisasi
-def Garis3(G):
-    return G[2]
+# Definisi dan Spesifikasi operator terhadap segiempat
+# NextDay: 2 Date --> Date
+#   {NextDay(D) menghitung keesokan hari dari Date D}
 
-# Garis4: Segiempat --> Garis
-#   {Garis4(G) memberikan Garis-2 dari Segiempat G}
 # Realisasi
-def Garis4(G):
-    return G[3]
+def AreaBujurSangkar(S):
+    return panjang_garis(alas(S)) * panjang_garis(tinggi(S))
 
 # Definisi dan Spesifikasi Predikat
 # isBujurSangkar: Segiempat --> Boolean
 #   {panjang_garis(G) menghitung panjang garis dari point-1 ke point-2}
+
 # Realisasi
 def isBujueSangkar(S):
-    P_Garis_1 = panjang_garis(Garis1(S))
-    P_Garis_2 = panjang_garis(Garis2(S))
-    P_Garis_3 = panjang_garis(Garis3(S))
-    P_Garis_4 = panjang_garis(Garis4(S))
-    return P_Garis_1 == P_Garis_2 == P_Garis_3 == P_Garis_4
+    return panjang_garis(alas(S)) == panjang_garis(tinggi(S))
 
 def isJarjargenjang(S):
-    P_Garis_1 = panjang_garis(Garis1(S))
-    P_Garis_2 = panjang_garis(Garis2(S))
-    P_Garis_3 = panjang_garis(Garis3(S))
-    P_Garis_4 = panjang_garis(Garis4(S))
-    return P_Garis_1 == P_Garis_2 or P_Garis_1 == P_Garis_3 or P_Garis_1 == P_Garis_3 or P_Garis_2 == P_Garis_3 or P_Garis_2 == P_Garis_4 or  P_Garis_3 == P_Garis_4
+    return panjang_garis(alas(S)) != panjang_garis(tinggi(S))
 
 # Aplikasi 
-print(isBujueSangkar(Make_Segiempat(Make_Garis(Make_point(2,2), Make_point(5,2)),Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)))))
-print(isJarjargenjang(Make_Segiempat(Make_Garis(Make_point(2,2), Make_point(5,2)),Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)), Make_Garis(Make_point(2,2), Make_point(5,2)))))
+print(AreaBujurSangkar(Make_Segiempat(Make_Garis(Make_point(1,2), Make_point(4,5)), Make_Garis(Make_point(1,2), Make_point(4,5)))))
+
+print(isBujueSangkar(Make_Segiempat(Make_Garis(Make_point(1,2), Make_point(4,5)), Make_Garis(Make_point(1,2), Make_point(4,5)))))
+print(isJarjargenjang(Make_Segiempat(Make_Garis(Make_point(1,2), Make_point(4,5)), Make_Garis(Make_point(1,2), Make_point(4,5)))))
