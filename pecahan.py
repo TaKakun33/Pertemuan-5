@@ -83,10 +83,10 @@ def IsGtp(P1,P2):
 # Aplikasi
 print(AddP(makeP(4,5), makeP(1,2)))
 print(SubP(makeP(4,5), makeP(1,2)))
-print(MulP(makeP(4,5), makeP(1,2)))
-print(DivP(makeP(4,5), makeP(1,2)))
-print(RealP(makeP(4,5)))
+print(MulP(makeP(3,5), makeP(1,3)))
+print(DivP(makeP(3,5), makeP(1,3)))
+print(RealP(makeP(1,5)))
 
-print(isLtP(makeP(1,3), makeP(1,2)))
 print(isEqP(makeP(2,4), makeP(1,2)))
-print(IsGtp(makeP(2,4), makeP(1,2)))
+print(isLtP(makeP(1,3), makeP(1,2)))
+print(IsGtp(makeP(2,5), makeP(1,2)))
